@@ -1,1 +1,7 @@
 @import "tailwindcss";
+
+@utility font-logo {
+    font-family: "DM Serif Display", serif;
+    font-size: 33px;
+    letter-spacing: -0.020em;
+}
