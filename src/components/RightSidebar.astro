@@ -1,0 +1,165 @@
+---
+import { Star } from "@lucide/astro";
+
+const staffPicks = [
+    {
+        id: 1,
+        author: "Wesley Edits",
+        title: "What Do You Grab When You Don't Know If You're Ever Coming Back?",
+        timeAgo: "6d ago",
+        publication: "In Write Your World",
+    },
+    {
+        id: 2,
+        author: "Bryony Hutt",
+        title: "Trauma Led Me to Aid Work, Healing Has Led Me Out",
+        timeAgo: "May 23",
+        publication: "In Human Parts",
+    },
+    {
+        id: 3,
+        author: "Urszula Kluz",
+        title: "Tender leadership with a bit of mischief",
+        timeAgo: "Aug 25",
+        publication: "In UX Collective",
+    },
+];
+
+const topics = [
+    "Data Science",
+    "Self Improvement",
+    "Writing",
+    "Relationships",
+    "Politics",
+    "Cryptocurrency",
+    "Productivity",
+];
+
+const whoToFollow = [
+    {
+        name: "Daniel Scott",
+        description: "Full stack developer with 8 years of experience...",
+        avatar: "D",
+    },
+    {
+        name: "Javier De la Cruz",
+        description: "Backend developer with 1 year of experience...",
+        avatar: "J",
+    },
+    {
+        name: "Javier De la Cruz",
+        description: "Backend developer with 1 year of experience...",
+        avatar: "J",
+    },
+    {
+        name: "Javier De la Cruz",
+        description: "Backend developer with 1 year of experience...",
+        avatar: "J",
+    },
+    {
+        name: "Javier De la Cruz",
+        description: "Backend developer with 1 year of experience...",
+        avatar: "J",
+    },
+    {
+        name: "Javier De la Cruz",
+        description: "Backend developer with 1 year of experience...",
+        avatar: "J",
+    },
+];
+---
+
+<aside
+    class="hidden md:block w-92 border-l border-gray-100 sticky bottom-0 self-start
+         [margin-inline-end:clamp(0rem,(100vw-768px)/7,15rem)]"
+>
+    <div class="p-10 space-y-8">
+        <!-- Staff Picks -->
+        <section>
+            <h2 class="font-semibold mb-4">Staff Picks</h2>
+            <div class="space-y-4">
+                {
+                    staffPicks.map((article, index) => (
+                        <div class="group cursor-pointer mb-4">
+                            <div class="flex items-center gap-2 mb-3">
+                                <div class="w-6 h-6 bg-black text-white text-xs font-medium rounded-sm flex items-center justify-center flex-shrink-0">
+                                    {article.publication.split(" ")[1]?.[0] ||
+                                        "W"}
+                                </div>
+                                <p class="text-xs ">
+                                    {article.publication}{" "}
+                                    <span class="">by {article.author}</span>
+                                </p>
+                            </div>
+
+                            <h3 class="mt-1 font-bold line-clamp-2 leading-tight">
+                                {article.title}
+                            </h3>
+
+                            <div class="flex items-center gap-2 mt-2">
+                                {index === 0 && (
+                                    <Star class="w-3 h-3 text-amber-400 fill-amber-300" />
+                                )}
+                                <span class="text-xs text-gray-600">
+                                    {article.timeAgo}
+                                </span>
+                            </div>
+                        </div>
+                    ))
+                }
+            </div>
+            <a class="text-sm mt-4 text-gray-600"> See the full list </a>
+        </section>
+
+        <!-- Recommended Topics -->
+        <section>
+            <h2 class="font-semibold text-foreground mb-6">
+                Recommended topics
+            </h2>
+            <div class="flex flex-wrap gap-[10px]">
+                {
+                    topics.map((topic) => (
+                        <button class="px-4 bg-gray-100 py-2 text-sm bg-surface-muted text-foreground-muted hover:bg-border-light hover:text-foreground rounded-full transition-colors">
+                            {topic}
+                        </button>
+                    ))
+                }
+            </div>
+            <button
+                class="text-sm text-accent-green hover:text-accent-green-hover mt-4 text-gray-600"
+            >
+                See more topics
+            </button>
+        </section>
+
+        <!-- Who to Follow -->
+        <section>
+            <h2 class="font-semibold text-foreground mb-6">Who to follow</h2>
+            <div class="space-y-4">
+                {
+                    whoToFollow.map((person) => (
+                        <div class="flex items-start justify-between gap-2">
+                            <div class="flex items-start gap-2 min-w-0">
+                                <div class="w-8 h-8 bg-accent-green rounded-full flex items-center justify-center bg-black text-white font-medium text-sm flex-shrink-0">
+                                    {person.avatar}
+                                </div>
+                                <div class="max-w-40">
+                                    <h3 class="font-bold text-foreground cursor-not-allowed">
+                                        {person.name}
+                                    </h3>
+                                    <p class="text-sm text-foreground-muted line-clamp-2 text-gray-600 leading-5">
+                                        {person.description}
+                                    </p>
+                                </div>
+                            </div>
+
+                            <button class="text-sm px-3 py-2 border border-gray-950 rounded-full cursor-not-allowed hover:bg-gray-50 flex-shrink-0">
+                                Follow
+                            </button>
+                        </div>
+                    ))
+                }
+            </div>
+        </section>
+    </div>
+</aside>
