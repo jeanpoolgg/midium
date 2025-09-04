@@ -1,9 +1,21 @@
 ---
 import Layout from "../layout/Layout.astro";
-
-
 ---
 
 <Layout title="Inicio">
-	<h1>Home</h1>
+	{/* Notification Banner */}
+	<div class="h-9 border-b border-gray-100 mt-4 flex gap-8 text-sm">
+		<a href="" class="border-b border-gray-600 h-9 text-gray-900">For you</a
+		>
+		<a href="" class="text-gray-600">Featured</a>
+	</div>
+	<div class="rounded-lg bg-gray-50 mt-2 px-6 py-4">
+		<div class="flex justify-between gap-3 items-start">
+			<p class="text-sm text-foreground-muted flex-1">
+				"Following" and your topics are now part of the new Following
+				page, which you can find from the sidebar.
+			</p>
+			<a class="text-sm underline shrink-0"> Okay, got it </a>
+		</div>
+	</div>
 </Layout>
