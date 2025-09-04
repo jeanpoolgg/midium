@@ -1,5 +1,5 @@
 ---
-import { Star } from "@lucide/astro";
+import { Sparkle } from "@lucide/astro";
 
 const staffPicks = [
     {
@@ -82,7 +82,7 @@ const whoToFollow = [
                     staffPicks.map((article, index) => (
                         <div class="group cursor-pointer mb-4">
                             <div class="flex items-center gap-2 mb-3">
-                                <div class="w-6 h-6 bg-black text-white text-xs font-medium rounded-sm flex items-center justify-center flex-shrink-0">
+                                <div class="w-5 h-5 bg-black text-white text-xs font-medium rounded-sm flex items-center justify-center flex-shrink-0">
                                     {article.publication.split(" ")[1]?.[0] ||
                                         "W"}
                                 </div>
@@ -98,7 +98,7 @@ const whoToFollow = [
 
                             <div class="flex items-center gap-2 mt-2">
                                 {index === 0 && (
-                                    <Star class="w-3 h-3 text-amber-400 fill-amber-300" />
+                                    <Sparkle class="w-4 h-4 text-amber-300 fill-amber-300" />
                                 )}
                                 <span class="text-xs text-gray-600">
                                     {article.timeAgo}

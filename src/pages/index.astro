@@ -1,5 +1,43 @@
 ---
+import ArticleCard from "../components/ArticleCard.astro";
 import Layout from "../layout/Layout.astro";
+
+const articles = [
+	{
+		id: 1,
+		author: "Andrey Gorchakov",
+		title: "Taming the Flow: A Vibe-Coded Pacing Visualizer for Game Designers",
+		excerpt:
+			"A long, long time ago, after reading Valve's presentation on AI director and how it dynamically influences the pacing and flow of...",
+		readTime: "7 min read",
+		date: "Aug 22",
+		likes: 116,
+		comments: 1,
+	},
+	{
+		id: 2,
+		author: "Pythonworld",
+		title: "Why I Stopped Using Classes in Python (And What I Use Instead)",
+		excerpt:
+			"After years of writing class-based Python code, I realized simpler tools often get the job done better. Here's what I switched to—...",
+		readTime: "5 min read",
+		date: "Jul 22",
+		likes: 189,
+		comments: 44,
+		publication: "The Pythonworld",
+	},
+	{
+		id: 3,
+		author: "Mohamed Bakry",
+		title: "12 High-Selling Digital Products You Can Build with ChatGPT",
+		excerpt: "Prompts are included with a Monetization Tool [Save it]",
+		readTime: "8 min read",
+		date: "1d ago",
+		likes: 233,
+		comments: 81,
+		publication: "How To Profit AI",
+	},
+];
 ---
 
 <Layout title="Inicio">
@@ -17,5 +55,22 @@ import Layout from "../layout/Layout.astro";
 			</p>
 			<a class="text-sm underline shrink-0"> Okay, got it </a>
 		</div>
+	</div>
+	{/* Articles */}
+	<div class="space-y-0 mt-[26px]">
+		{
+			articles.map((article) => (
+				<ArticleCard
+					author={article.author}
+					title={article.title}
+					excerpt={article.excerpt}
+					readTime={article.readTime}
+					date={article.date}
+					likes={article.likes}
+					comments={article.comments}
+					publication={article.publication}
+				/>
+			))
+		}
 	</div>
 </Layout>
