@@ -9,7 +9,6 @@ const articles = [
 		title: "Taming the Flow: A Vibe-Coded Pacing Visualizer for Game Designers",
 		excerpt:
 			"A long, long time ago, after reading Valve's presentation on AI director and how it dynamically influences the pacing and flow of...",
-		readTime: "7 min read",
 		date: "Aug 22",
 		likes: 116,
 		comments: 1,
@@ -20,7 +19,6 @@ const articles = [
 		title: "Why I Stopped Using Classes in Python (And What I Use Instead)",
 		excerpt:
 			"After years of writing class-based Python code, I realized simpler tools often get the job done better. Here's what I switched to—...",
-		readTime: "5 min read",
 		date: "Jul 22",
 		likes: 189,
 		comments: 44,
@@ -31,7 +29,6 @@ const articles = [
 		author: "Mohamed Bakry",
 		title: "12 High-Selling Digital Products You Can Build with ChatGPT",
 		excerpt: "Prompts are included with a Monetization Tool [Save it]",
-		readTime: "8 min read",
 		date: "1d ago",
 		likes: 233,
 		comments: 81,
@@ -48,7 +45,7 @@ const articles = [
 		<a href="" class="text-gray-600">Featured</a>
 	</div>
 	<div class="rounded-lg bg-gray-50 mt-2 px-6 py-4">
-		<div class="flex justify-between gap-3 items-start">
+		<div class="flex flex-col md:justify-between gap-3 items-start">
 			<p class="text-sm text-foreground-muted flex-1">
 				"Following" and your topics are now part of the new Following
 				page, which you can find from the sidebar.
@@ -64,7 +61,6 @@ const articles = [
 					author={article.author}
 					title={article.title}
 					excerpt={article.excerpt}
-					readTime={article.readTime}
 					date={article.date}
 					likes={article.likes}
 					comments={article.comments}

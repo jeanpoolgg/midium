@@ -2,6 +2,7 @@
 import Header from "../components/Header.astro";
 import RightSidebar from "../components/RightSidebar.astro";
 import Sidebar from "../components/Sidebar.astro";
+import { ArrowUpRight } from "@lucide/astro";
 import "../styles/global.css";
 
 interface Props {
@@ -26,12 +27,20 @@ const { title } = Astro.props;
     </head>
     <body>
         <div class="min-h-screen bg-background">
+            <div
+                class="bg-white border-b border-gray-100 flex justify-center items-center h-10 text-gray-400 text-sm sm:hidden"
+            >
+                <a href="" class="flex gap-2">
+                    Open in App
+                    <ArrowUpRight class="w-4" />
+                </a>
+            </div>
             <Header />
             <div class="flex flex-col md:flex-row min-h-screen">
                 <Sidebar />
 
                 <main class="flex-1 md:ms-100">
-                    <div class="max-w-[680px] mx-auto py-6">
+                    <div class="max-w-[680px] mx-auto pt-2 md:pt-6 px-6">
                         <slot />
                     </div>
                 </main>

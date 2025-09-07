@@ -23,7 +23,9 @@ import { Search, SquarePen, Bell, Menu } from "@lucide/astro";
             </div>
 
             <!-- Search -->
-            <div class="relative bg-gray-50 rounded-full w-60 ms-4">
+            <div
+                class="relative bg-gray-50 rounded-full w-60 ms-4 hidden md:block"
+            >
                 <Search
                     class="absolute left-3 top-1/2 transform -translate-y-1/2 text-foreground-muted h-6 text-gray-600"
                     stroke-width={1}
@@ -39,17 +41,18 @@ import { Search, SquarePen, Bell, Menu } from "@lucide/astro";
 
         <!-- Right side - Actions -->
         <div class="flex items-center gap-8">
-            <button
-                class="hidden md:flex items-center gap-2 text-foreground-muted hover:text-foreground"
-            >
+            <button class="hidden md:flex items-center gap-2">
                 <SquarePen class="h-6 text-gray-500" stroke-width={0.9} />
                 <span class="text-sm text-gray-500">Write</span>
             </button>
-            <button class="text-foreground-muted hover:text-foreground">
+            <button class="hidden">
                 <Bell class="h-6 text-gray-500" stroke-width={0.9} />
             </button>
+            <button class="block md:hidden">
+                <Search class="h-6 text-gray-500" stroke-width={0.9} />
+            </button>
             <div
-                class="w-8 h-8 bg-accent-green rounded-full flex items-center justify-center text-white bg-gray-500 font-medium text-lg"
+                class="w-8 h-8 bg-accent-green rounded-full flex items-center justify-center text-white bg-slate-500 font-medium text-lg"
             >
                 J
             </div>
