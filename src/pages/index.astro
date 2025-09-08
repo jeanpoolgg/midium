@@ -1,8 +1,9 @@
 ---
-import ArticleCard from "../components/ArticleCard.astro";
-import Layout from "../layout/Layout.astro";
+import ArticleCard from "@components/ArticleCard.astro";
 
-import { getAllPosts } from "../cms/providers/wp-graphql/posts/index";
+import { getAllPosts } from "@providers/wp-graphql/posts/index";
+import Layout from "@layout/Layout.astro";
+
 const posts = await getAllPosts();
 ---
 

@@ -1,4 +1,4 @@
-import type { PostNormalized } from "../../../../../typesNormalized/global";
+import type { PostNormalized } from "@typesNormalized";
 import type { PostNodeRaw } from "../../types/posts";
 
 
