@@ -1,0 +1,34 @@
+query GetAllPosts {
+  posts(first: 15) {
+    nodes {
+      id
+      title
+      slug
+      date
+      categories {
+        nodes {
+          name
+          slug
+        }
+      }
+      featuredImage {
+        node {
+          sourceUrl
+          altText
+        }
+      }
+      authorACF {
+        author
+      }
+      premiumACF {
+        premium
+      }
+      subtitleACF {
+        subtitle
+      }
+      tiempoDeLecturaACF {
+        readingTime
+      }
+    }
+  }
+}

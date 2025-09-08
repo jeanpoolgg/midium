@@ -2,39 +2,8 @@
 import ArticleCard from "../components/ArticleCard.astro";
 import Layout from "../layout/Layout.astro";
 
-const articles = [
-	{
-		id: 1,
-		author: "Andrey Gorchakov",
-		title: "Taming the Flow: A Vibe-Coded Pacing Visualizer for Game Designers",
-		excerpt:
-			"A long, long time ago, after reading Valve's presentation on AI director and how it dynamically influences the pacing and flow of...",
-		date: "Aug 22",
-		likes: 116,
-		comments: 1,
-	},
-	{
-		id: 2,
-		author: "Pythonworld",
-		title: "Why I Stopped Using Classes in Python (And What I Use Instead)",
-		excerpt:
-			"After years of writing class-based Python code, I realized simpler tools often get the job done better. Here's what I switched to—...",
-		date: "Jul 22",
-		likes: 189,
-		comments: 44,
-		publication: "The Pythonworld",
-	},
-	{
-		id: 3,
-		author: "Mohamed Bakry",
-		title: "12 High-Selling Digital Products You Can Build with ChatGPT",
-		excerpt: "Prompts are included with a Monetization Tool [Save it]",
-		date: "1d ago",
-		likes: 233,
-		comments: 81,
-		publication: "How To Profit AI",
-	},
-];
+import { getAllPosts } from "../cms/providers/wp-graphql/posts/index";
+const posts = await getAllPosts();
 ---
 
 <Layout title="Inicio">
@@ -56,15 +25,15 @@ const articles = [
 	{/* Articles */}
 	<div class="space-y-0 mt-[26px]">
 		{
-			articles.map((article) => (
+			posts.map((post) => (
 				<ArticleCard
-					author={article.author}
-					title={article.title}
-					excerpt={article.excerpt}
-					date={article.date}
-					likes={article.likes}
-					comments={article.comments}
-					publication={article.publication}
+					author={post.author}
+					title={post.title}
+					subtitle={post.subtitle ?? ""}
+					date={post.date}
+					likes={0}
+					comments={0}
+					image={post.featuredImage?.sourceUrl ?? ""}
 				/>
 			))
 		}
