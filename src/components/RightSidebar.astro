@@ -70,17 +70,17 @@ const whoToFollow = [
 ---
 
 <aside
-    class="hidden md:block w-92 border-l border-gray-100 sticky bottom-0 self-start
-         [margin-inline-end:clamp(0rem,(100vw-768px)/7,15rem)] bg-white"
+    class="hidden md:block w-96 border-l border-gray-100 sticky bottom-0 self-start
+         [margin-inline-end:clamp(0rem,(100vw-768px)/7.8,15rem)] bg-white"
 >
-    <div class="p-10 space-y-8">
+    <div class="p-10 px-6 ps-10 space-y-8 min-w-88">
         <!-- Staff Picks -->
         <section>
             <h2 class="font-semibold mb-4">Staff Picks</h2>
             <div class="space-y-4">
                 {
                     staffPicks.map((article, index) => (
-                        <div class="group cursor-pointer mb-4">
+                        <div class="group cursor-pointer mb-5">
                             <div class="flex items-center gap-2 mb-3">
                                 <div class="w-5 h-5 bg-black text-white text-xs font-medium rounded-sm flex items-center justify-center flex-shrink-0">
                                     {article.publication.split(" ")[1]?.[0] ||
@@ -92,11 +92,11 @@ const whoToFollow = [
                                 </p>
                             </div>
 
-                            <h3 class="mt-1 font-bold line-clamp-2 leading-tight">
+                            <h3 class="font-bold line-clamp-2 leading-tight mb-3">
                                 {article.title}
                             </h3>
 
-                            <div class="flex items-center gap-2 mt-2">
+                            <div class="flex items-center gap-2 h-5">
                                 {index === 0 && (
                                     <Sparkle class="w-4 h-4 text-amber-300 fill-amber-300" />
                                 )}
@@ -116,17 +116,17 @@ const whoToFollow = [
             <h2 class="font-semibold text-foreground mb-6">
                 Recommended topics
             </h2>
-            <div class="flex flex-wrap gap-[10px]">
+            <div class="flex flex-wrap">
                 {
                     topics.map((topic) => (
-                        <button class="px-4 bg-gray-100 py-2 text-sm bg-surface-muted text-foreground-muted hover:bg-border-light hover:text-foreground rounded-full transition-colors">
+                        <button class="px-4 bg-gray-100 py-2 border border-gray-100 text-sm bg-surface-muted text-foreground-muted hover:bg-border-light hover:text-foreground rounded-full transition-colors me-2 mb-[10px]">
                             {topic}
                         </button>
                     ))
                 }
             </div>
             <button
-                class="text-sm text-accent-green hover:text-accent-green-hover mt-4 text-gray-600"
+                class="text-sm text-accent-green hover:text-accent-green-hover mt-[6px] text-gray-600"
             >
                 See more topics
             </button>
